@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 13:18:46 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/15 16:15:09 by rvaz-da-         ###   ########.fr       */
+/*   Created: 2025/10/15 16:32:21 by rvaz-da-          #+#    #+#             */
+/*   Updated: 2025/10/15 17:06:54 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	char	ch;
+	size_t			i;
+	unsigned char	ch;
+	unsigned char	*str;
 
-	i = ft_strlen(s) + 1;
-	ch = (char) c;
-	while (i > 0)
+	i = 0;
+	ch = (unsigned char) c;
+	str = (unsigned char *) s;
+	while (str[i] && i < n)
 	{
-		if (s[i] == ch)
-			return ((char *)&s[i]);
-		i--;
+		if (str[i] == ch)
+			return (&str[i]);
+		i++;
 	}
-	if (s[i] == '\0')
-		return ((char *) &s[i]);
+	if (str[i] == '\0')
+		return (&str[i]);
 	return (0);
 }
 /*
@@ -34,9 +36,10 @@ char	*ft_strrchr(const char *s, int c)
 #include <string.h>
 int	main(void)
 {
-	const char	s[] = "pipicaca";
-
-	printf("mine: %s\n", ft_strrchr(s, 'p'));
-	//printf("og: %s\n", strrchr(s, 'p'));
+//	unsigned char	str[] = "pipcacazoeprout";
+	int	str[] = {1, 2, 3, 5, 8, 9};
+	
+	printf("mine: %s\n", (unsigned char *) ft_memchr(str, 8, sizeof(str)));
+	printf("og: %s\n",(unsigned char *) memchr(str, 8, sizeof(str)));
 	return (0);
 }*/

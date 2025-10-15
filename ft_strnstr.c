@@ -1,42 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 13:18:46 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/15 16:15:09 by rvaz-da-         ###   ########.fr       */
+/*   Created: 2025/10/15 17:30:15 by rvaz-da-          #+#    #+#             */
+/*   Updated: 2025/10/15 17:52:06 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	char	ch;
+	size_t	j;
 
-	i = ft_strlen(s) + 1;
-	ch = (char) c;
-	while (i > 0)
+	i = 0;
+	while (big[i] && i < len)
 	{
-		if (s[i] == ch)
-			return ((char *)&s[i]);
-		i--;
+		j = 0;
+		if (big[i] == little[0] && i < len)
+		{
+			while (big[i + j] == little[j] && (i + j) < len && little[j])
+				j++;
+			if (little[j] == '\0')
+				return ((char *) &big[i]);
+		}
+		i++;
 	}
-	if (s[i] == '\0')
-		return ((char *) &s[i]);
 	return (0);
 }
 /*
 #include <stdio.h>
-#include <string.h>
+#include <bsd/string.h>
 int	main(void)
 {
-	const char	s[] = "pipicaca";
+	const char	big[] = "bienvenu a tokyo!";
+	const char	little[] = " a";
 
-	printf("mine: %s\n", ft_strrchr(s, 'p'));
-	//printf("og: %s\n", strrchr(s, 'p'));
+	printf("mine: %s\n", ft_strnstr(big, little, 17));
+	printf("og: %s\n", strnstr(big, little, 17));
 	return (0);
 }*/
