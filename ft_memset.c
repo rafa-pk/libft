@@ -6,14 +6,14 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:21:16 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/13 17:43:40 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/15 11:49:25 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*buff;
 
 	i = 0;

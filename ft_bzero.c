@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 17:21:27 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/13 17:44:27 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/15 11:48:25 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*buff;
 
 	i = 0;

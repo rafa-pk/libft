@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 14:21:40 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/13 12:39:58 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/15 11:51:40 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	int_count(long int nb)
 	}
 	if (nb >= 10)
 		count += int_count(nb / 10);
-	return (count);	
+	return (count);
 }
 
 char	*ft_itoa(int n)

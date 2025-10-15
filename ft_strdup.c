@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:56:50 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/13 15:46:18 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/15 11:49:53 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(const char *str)
 {
-	int	i;
+	int		i;
 	char	*duplicate;
 
 	i = 0;

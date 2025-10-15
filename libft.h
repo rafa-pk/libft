@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 20:54:17 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/14 15:56:04 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/15 13:18:36 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *str);
-size_t	ft_strlcpy(char *dst, const char *restrict src, size_t dsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dsize);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 char	*ft_strdup(const char *str);
 char	*ft_itoa(int n);
 char	**ft_split(char *str, char c);
