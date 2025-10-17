@@ -6,27 +6,21 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 13:24:40 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/16 22:29:33 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/17 13:01:56 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	char_in_set(char const *s1, char const *set)
+int	char_in_set(char c, char const *set)
 {
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	j = 0;
-	while(s1[i])
+	while (set[i])
 	{
-		while (set[j])
-		{
-			if (s1[i] == set[j])
-				return (1);
-			j++;
-		}
+		if (c == set[i])
+			return (1);
 		i++;
 	}
 	return (0);
@@ -39,34 +33,34 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*trim;
 
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1);
-	while (char_in_set(s1, set))
+	while (char_in_set(s1[start], set))
 		start++;
-	while (char_in_set(s1, set))
+	while (end >= start && char_in_set(s1[end - 1], set))
 		end--;
 	trim = malloc(sizeof(char) * (end - start) + 1);
 	if (!trim)
 		return (NULL);
 	while (start < end)
-	{
-		trim[i] = s1[start];
-		i++;
-		start++;
-	}
+		trim[i++] = s1[start++];
 	trim[i] = '\0';
 	return (trim);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
-	char const	s1[] = "    .cacazoe123pipi.    ";
-	char const	set[] = " .cacapipi";
+	char const	s1[] = " He llo ";
+	char const	set[] = ""; 
 	char *result = ft_strtrim(s1, set);
 
 	printf("%s\n", result);
+	//printf("%d\n", char_in_set(s1, set));
 	free(result);
 	return (0);
 }
+*/
