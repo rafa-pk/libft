@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 14:02:52 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/13 13:30:58 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/18 16:33:07 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ char	**ft_split(char *str, char c)
 	int		strnum;
 	char	**split;
 
+	if (!str)
+		return (NULL);
 	i = 0;
 	ix = 0;
 	strnum = count_words(str, c);
