@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 20:54:17 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/19 17:18:25 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/19 21:53:05 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_bzero(void *s, size_t n);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-//void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
 //void	ft_lstclear(t_list **lst, void (*del)(void *));
 //void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	*ft_memset(void *s, int c, size_t n);
