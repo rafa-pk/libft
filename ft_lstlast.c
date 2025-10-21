@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 16:51:29 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/19 17:17:56 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/20 10:54:20 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(void)
 	ft_lstadd_front(&lst, ft_lstnew(ft_strdup("1")));
 	ft_lstadd_front(&lst, ft_lstnew(ft_strdup("dernier")));
 
-	printf("%s\n", (char *)lst->content);
+	printf("%s\n", (char *)ft_lstlast(lst->content));
 	return (0);
 }
 */
