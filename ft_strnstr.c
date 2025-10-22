@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:30:15 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/15 17:52:06 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/22 01:44:18 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 #include <bsd/string.h>
 int	main(void)
 {
-	const char	big[] = "bienvenu a tokyo!";
-	const char	little[] = " a";
+	const char	big[] = "Hello World";
+	const char	little[] = "World";
 
-	printf("mine: %s\n", ft_strnstr(big, little, 17));
-	printf("og: %s\n", strnstr(big, little, 17));
+	printf("mine: %s\n", ft_strnstr(big, little, 5));
+	printf("og: %s\n", strnstr(big, little, 5));
 	return (0);
 }*/

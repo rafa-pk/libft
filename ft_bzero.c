@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 17:21:27 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/15 11:48:25 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/22 01:46:53 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ int	main(void)
 {
 	char	buff[] = "2vfjh124h";
 
-	ft_bzero(buff, sizeof(buff));
+	ft_bzero(buff, 5);
 	printf("mine: %s\n", buff);
 
-	bzero(buff, sizeof(buff));
+	bzero(buff, 5);
 	printf("og: %s\n", buff);
 	return (0);
 }

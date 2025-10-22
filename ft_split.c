@@ -6,13 +6,13 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 14:02:52 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/18 16:33:07 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/21 22:41:10 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(char *str, char c)
+static int	count_words(char *str, char c)
 {
 	int	i;
 	int	word;
@@ -38,7 +38,7 @@ int	count_words(char *str, char c)
 	return (count);
 }
 
-char	*ft_strndup(char *str, char c, int *ix)
+static char	*ft_strndup(char *str, char c, int *ix)
 {
 	int		i;
 	int		len;

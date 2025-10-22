@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 11:30:35 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/21 13:46:34 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/21 15:37:58 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!lst || !f || !del)
 		return (NULL);
 	lst_return = NULL;
-	while(lst)
+	while (lst)
 	{
 		node = ft_lstnew(f(lst->content));
 		if (!node)

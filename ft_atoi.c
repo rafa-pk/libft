@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:27:29 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/13 11:25:51 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/22 02:16:31 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ int	ft_atoi(const char *str)
 	nb = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
-		neg++;
+		if (str[i] == '-')
+			neg++;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -43,7 +44,7 @@ int	ft_atoi(const char *str)
 /*
 int	main(void)
 {
-	const char str[] = "   -123892";
+	const char str[] = "     +456";
 
 	printf("mine: %d\n", ft_atoi(str));
 	printf("og: %d\n", atoi(str));

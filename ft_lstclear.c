@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 12:14:50 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/21 13:34:52 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/22 02:56:50 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	if (!*lst || del)
+	if (!*lst || !lst)
 		return ;
 	while (*lst)
 	{

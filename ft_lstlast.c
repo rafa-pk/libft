@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 16:51:29 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/20 10:54:20 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/22 02:50:49 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstlast(t_list *lst)
 
 	if (lst == NULL)
 		return (NULL);
-	current = NULL;
+	current = lst;
 	while (current->next != NULL)
 		current = current->next;
 	return (current);

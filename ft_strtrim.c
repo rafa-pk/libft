@@ -6,13 +6,13 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 13:24:40 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/17 13:01:56 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/22 02:41:08 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	char_in_set(char c, char const *set)
+static int	char_in_set(char c, char const *set)
 {
 	size_t	i;
 
@@ -54,8 +54,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 #include <stdio.h>
 int	main(void)
 {
-	char const	s1[] = " He llo ";
-	char const	set[] = ""; 
+	char const	s1[] = "xxHelloxx";
+	char const	set[] = 'x'; 
 	char *result = ft_strtrim(s1, set);
 
 	printf("%s\n", result);

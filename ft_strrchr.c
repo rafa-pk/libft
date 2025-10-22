@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:18:46 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/15 16:15:09 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/21 23:43:00 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,30 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
-	char	ch;
+	size_t			i;
+	unsigned char	ch;
 
-	i = ft_strlen(s) + 1;
-	ch = (char) c;
+	i = ft_strlen(s);
+	ch = (unsigned char) c;
 	while (i > 0)
 	{
 		if (s[i] == ch)
-			return ((char *)&s[i]);
+			return ((unsigned char *)&s[i]);
 		i--;
 	}
-	if (s[i] == '\0')
-		return ((char *) &s[i]);
-	return (0);
+	if (s[i] == ch || ch == '\0')
+		return ((unsigned char *) &s[i]);
+	return (NULL);
 }
 /*
 #include <stdio.h>
 #include <string.h>
 int	main(void)
 {
-	const char	s[] = "pipicaca";
+	const char	s[] = "Hello World";
+	const char	s1[] = "Hello World";
 
-	printf("mine: %s\n", ft_strrchr(s, 'p'));
-	//printf("og: %s\n", strrchr(s, 'p'));
+	printf("mine: %s\n", ft_strrchr(s, 'H'));
+	printf("og: %s\n", strrchr(s1, 'H'));
 	return (0);
 }*/
