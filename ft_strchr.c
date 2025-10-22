@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:02:44 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/21 23:43:16 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/22 03:02:13 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((unsigned char *) &s[i]);
 		i++;
 	}
-	if (ch  == '\0')
+	if (ch == '\0')
 		return ((unsigned char *) &s[i]);
 	return (NULL);
 }
