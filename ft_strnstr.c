@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:30:15 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/22 01:44:18 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:05:25 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (!big || !little)
+		return (NULL);
+	if (little[0] == '\0')
+		return ((char *) big);
 	i = 0;
 	while (big[i] && i < len)
 	{
@@ -30,7 +34,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 /*
 #include <stdio.h>

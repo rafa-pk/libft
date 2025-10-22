@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:32:21 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/15 17:06:54 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:15:01 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,23 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	ch = (unsigned char) c;
 	str = (unsigned char *) s;
-	while (str[i] && i < n)
+	while (i < n)
 	{
 		if (str[i] == ch)
 			return (&str[i]);
 		i++;
 	}
-	if (str[i] == '\0')
-		return (&str[i]);
-	return (0);
+	return (NULL);
 }
 /*
 #include <stdio.h>
 #include <string.h>
 int	main(void)
 {
-//	unsigned char	str[] = "pipcacazoeprout";
-	int	str[] = {1, 2, 3, 5, 8, 9};
+	unsigned char	str[] = "pipcacazoeprout";
+//	int	str[] = {1, 2, 3, 5, 8, 9};
 	
-	printf("mine: %s\n", (unsigned char *) ft_memchr(str, 8, sizeof(str)));
-	printf("og: %s\n",(unsigned char *) memchr(str, 8, sizeof(str)));
+	printf("mine: %s\n", (unsigned char *) ft_memchr(str, 0, 0));
+	printf("og: %s\n",(unsigned char *) memchr(str, 0, 0));
 	return (0);
 }*/

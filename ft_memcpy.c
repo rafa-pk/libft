@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 20:34:23 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/15 11:48:56 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:22:14 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*d;
 
 	i = 0;
+	if (n == 0)
+		return (dest);
 	s = (unsigned char *) src;
 	d = (unsigned char *) dest;
 	while (i < n)
