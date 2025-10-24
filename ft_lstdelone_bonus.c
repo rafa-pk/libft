@@ -1,43 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 13:18:46 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/23 12:08:58 by rvaz-da-         ###   ########.fr       */
+/*   Created: 2025/10/19 21:53:20 by rvaz-da-          #+#    #+#             */
+/*   Updated: 2025/10/20 12:06:03 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	size_t			i;
-	unsigned char	ch;
+	if (!lst)
+		return ;
+	del(lst->content);
+	free(lst);
+}
 
-	i = ft_strlen(s);
-	ch = (unsigned char) c;
-	while (i > 0)
-	{
-		if (s[i] == ch)
-			return ((char *)&s[i]);
-		i--;
-	}
-	if (s[i] == ch || ch == '\0')
-		return ((char *) &s[i]);
-	return (NULL);
+void	del(void *list)
+{
+	free(list);
 }
 /*
 #include <stdio.h>
-#include <string.h>
 int	main(void)
 {
-	const char	s[] = "Hello World";
-	const char	s1[] = "Hello World";
+	t_list	*delnode;
+	t_list	*lst = NULL;
 
-	printf("mine: %s\n", ft_strrchr(s, 'H'));
-	printf("og: %s\n", strrchr(s1, 'H'));
+	ft_lstadd_front(&lst, ft_lstnew(ft_strdup("Premier")));
+	ft_lstadd_front(&lst, ft_lstnew(ft_strdup("Deuxieme")));
+	delnode = lst->next;
+	lst->next = delnode->next;
+	ft_lstdelone(delnode, del);
+	while (lst)
+	{
+		printf("%s\n", (char *)lst->content);
+		lst = lst->next;
+	}
 	return (0);
 }*/

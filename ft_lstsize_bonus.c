@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 13:18:46 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/23 12:08:58 by rvaz-da-         ###   ########.fr       */
+/*   Created: 2025/10/19 16:26:17 by rvaz-da-          #+#    #+#             */
+/*   Updated: 2025/10/22 16:31:41 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_lstsize(t_list *lst)
 {
-	size_t			i;
-	unsigned char	ch;
+	int		i;
 
-	i = ft_strlen(s);
-	ch = (unsigned char) c;
-	while (i > 0)
+	i = 0;
+	while (lst && lst != NULL)
 	{
-		if (s[i] == ch)
-			return ((char *)&s[i]);
-		i--;
+		i++;
+		lst = lst->next;
 	}
-	if (s[i] == ch || ch == '\0')
-		return ((char *) &s[i]);
-	return (NULL);
+	return (i);
 }
 /*
 #include <stdio.h>
-#include <string.h>
 int	main(void)
 {
-	const char	s[] = "Hello World";
-	const char	s1[] = "Hello World";
+	t_list	*lst = NULL;
 
-	printf("mine: %s\n", ft_strrchr(s, 'H'));
-	printf("og: %s\n", strrchr(s1, 'H'));
+	ft_lstadd_front(&lst, ft_lstnew(ft_strdup("Premier")));
+	ft_lstadd_front(&lst, ft_lstnew(ft_strdup("Deuxieme")));
+	ft_lstadd_front(&lst, ft_lstnew(ft_strdup("Troisieme")));
+
+	printf("%d\n", ft_lstsize(lst));
+	free(lst);
 	return (0);
 }*/
