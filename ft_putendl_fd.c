@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 17:18:13 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/13 13:04:28 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/10/26 11:39:02 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
-	if (fd < 0)
+	if (!s || fd < 0)
 		return ;
 	i = 0;
 	while (s[i])
