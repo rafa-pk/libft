@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 20:54:17 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/10/21 22:47:48 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/11/19 15:24:14 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <fcntl.h>
+# include <stdio.h>
+
+# define DEC "0123456789"
+# define HEX_LC "012345679abcdef"
+# define HEX_UC "0123456789ABCDEF"
+
+# ifndef BUFFER_SIZE
+#	define BUFFER_SIZE 5
+# endif
 
 typedef struct s_list
 {
@@ -22,6 +33,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+//OG LIBFT
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
@@ -48,7 +60,6 @@ int		ft_tolower(int c);
 int		ft_atoi(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-int		ft_lstsize(t_list *lst);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize);
@@ -65,5 +76,19 @@ char	**ft_split(char *str, char c);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//FT_PRINTF
+int	ft_printf(const char *str, ...);
+int	format_spec(char fmt, va_list *ap);
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr_base(long long nb, int base, char *new_base);
+int	ft_putptr(unsigned long long nb,  int flag);
+
+//GNL
+char	*get_next_line(int fd);
+size_t	gnl_strlen(char *str);
+char	*gnl_strjoin(char *line, char *buff);
+char	*clean_buff(char *buff);
 
 #endif
